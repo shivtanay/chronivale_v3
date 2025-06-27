@@ -155,7 +155,7 @@ We welcome contributions!
 
 ## 📜 License
 
-Licensed under the **MIT License**. See [`LICENSE.txt`](./LICENSE.txt) for details.
+Licensed under the **MIT License**.
 
 ---
 
