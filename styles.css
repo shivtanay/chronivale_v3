@@ -1,0 +1,1104 @@
+/* ========================================
+    STYLES.CSS - COMPLETE VERSION
+   ======================================== */
+
+/* --- BASE & THEME STYLES --- */
+body {
+  background-color: #0f0f1a; /* Dark background for the body */
+  color: #e0e0e0; /* Light text color for readability */
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; /* Modern, clean font stack */
+  line-height: 1.6; /* Improved readability for body text */
+  padding-top: 80px; /* Adjusted for fixed navbar height to prevent content overlap */
+}
+
+.background-container {
+  position: fixed; /* Fixed position to cover the entire viewport */
+  top: 0; /* Align to the top */
+  left: 0; /* Align to the left */
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  z-index: -1; /* Send to the background, behind other content */
+  background-size: cover; /* Cover the entire container, maintaining aspect ratio */
+  background-position: center; /* Center the background image */
+  background-repeat: no-repeat; /* Prevent background image repetition */
+  transition: background-image 1.5s ease-in-out; /* Smooth transition for background image changes */
+  opacity: 0.3; /* Semi-transparent background for a subtle effect */
+}
+
+.container {
+  max-width: 1200px; /* Maximum width for content container */
+  background: linear-gradient(
+    -45deg,
+    #23a6d5,
+    #23d5ab85,
+    #1a418a87,
+    #274b748c
+  ); /* Gradient background for main content */
+  background-size: 400% 400%; /* Large background size for animation */
+  animation: gradientAnimation 10s ease infinite; /* Apply gradient animation */
+  border-radius: 15px; /* Rounded corners for the container */
+  padding: 20px; /* Inner padding */
+  box-shadow: 0 0 25px rgba(71, 138, 255, 0.25); /* Soft glowing shadow */
+  margin: auto; /* Center the container horizontally */
+}
+
+h1,
+h2,
+h4,
+h5,
+h6 {
+  color: #7bb5ff; /* Accent color for headings */
+}
+
+h1,
+h2 {
+  text-align: center; /* Center align main headings */
+  margin-bottom: 15px; /* Space below main headings */
+}
+
+/* --- NAVBAR & MODAL STYLES --- */
+.navbar {
+  border-bottom: 1px solid rgba(123, 181, 255, 0.2); /* Subtle bottom border */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Shadow for depth */
+  background: linear-gradient(
+    -45deg,
+    #23a6d5,
+    #23d5ab,
+    #1a428a,
+    #274b74
+  ); /* Gradient background for the navbar */
+  background-size: 400% 400%; /* Large background size for animation */
+  animation: gradientAnimation 10s ease infinite; /* Apply gradient animation */
+}
+
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%; /* Starting position for gradient animation */
+  }
+
+  50% {
+    background-position: 100% 50%; /* Middle position for gradient animation */
+  }
+
+  100% {
+    background-position: 0% 50%; /* End position, looping back */
+  }
+}
+
+.navbar-brand {
+  font-weight: bold; /* Bold font for brand name */
+  color: #ffffff !important; /* White color for brand, important to override Bootstrap */
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.5); /* Text shadow for better visibility */
+}
+
+.nav-link {
+  color: #e0fbfc !important; /* Light blue color for nav links, important to override Bootstrap */
+  display: flex; /* Use flexbox for alignment of icon and text */
+  align-items: center; /* Center items vertically */
+  gap: 8px; /* Space between icon and text */
+  transition: color 0.2s, background-color 0.2s; /* Smooth transition for hover effects */
+  border-radius: 6px; /* Slightly rounded corners */
+  padding: 8px 12px !important; /* Custom padding, important to override Bootstrap */
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: #ffffff !important; /* White color on hover/active */
+  background-color: rgba(
+    255,
+    255,
+    255,
+    0.1
+  ); /* Subtle white background on hover/active */
+}
+
+.navbar-nav .nav-link.disabled {
+  color: #a0c2e0 !important; /* Lighter color for disabled links */
+  opacity: 0.6; /* Reduce opacity for disabled links */
+  pointer-events: none; /* Disable mouse events for disabled links */
+  background-color: transparent; /* No background for disabled links */
+}
+
+.navbar .dropdown-menu {
+  background-color: #1c1c2c; /* Dark background for dropdown menu */
+  border: 1px solid rgba(123, 181, 255, 0.3); /* Subtle border */
+  border-radius: 10px; /* Rounded corners */
+  padding: 10px; /* Inner padding */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4); /* Deeper shadow for dropdown */
+}
+
+.dropdown-item,
+.dropdown-item-text {
+  color: #e0e0e0; /* Light text color for dropdown items */
+  transition: background-color 0.2s, color 0.2s; /* Smooth transition for hover effects */
+  border-radius: 4px; /* Slightly rounded corners */
+}
+
+.dropdown-item:hover,
+.dropdown-item:focus {
+  background-color: rgba(
+    123,
+    181,
+    255,
+    0.2
+  ); /* Subtle blue background on hover/focus */
+  color: #ffffff; /* White text on hover/focus */
+}
+
+.dropdown-header {
+  color: #7bb5ff; /* Accent color for dropdown headers */
+  font-weight: bold; /* Bold font for dropdown headers */
+}
+
+.dropdown-divider {
+  border-color: rgba(123, 181, 255, 0.3); /* Subtle border color for dividers */
+}
+
+.audio-control-item {
+  display: flex; /* Use flexbox for layout */
+  justify-content: space-between; /* Space out items */
+  align-items: center; /* Vertically align items */
+  padding: 8px 16px; /* Padding for each control item */
+  color: #e0e0e0; /* Light text color */
+}
+
+.audio-control-item .form-range {
+  cursor: pointer; /* Pointer cursor for range input */
+}
+
+/* Custom styling for range input thumbs */
+.form-range::-webkit-slider-thumb {
+  background-color: #7bb5ff; /* Blue thumb for Webkit browsers */
+}
+
+.form-range::-moz-range-thumb {
+  background-color: #7bb5ff; /* Blue thumb for Mozilla browsers */
+}
+
+.form-range::-ms-thumb {
+  background-color: #7bb5ff; /* Blue thumb for Microsoft browsers */
+}
+
+/* Custom styling for range input tracks */
+.form-range::-webkit-slider-runnable-track {
+  background-color: #2a2a40; /* Dark track for Webkit browsers */
+  border-radius: 10px; /* Rounded track */
+  height: 8px; /* Height of the track */
+}
+
+.form-range::-moz-range-track {
+  background-color: #2a2a40; /* Dark track for Mozilla browsers */
+  border-radius: 10px; /* Rounded track */
+  height: 8px; /* Height of the track */
+}
+
+.modal-content {
+  background-color: #1c1c2c; /* Dark background for modal content */
+  color: #e0e0e0; /* Light text color */
+  border: 1px solid rgba(123, 181, 255, 0.3); /* Subtle border */
+  box-shadow: 0 0 30px rgba(71, 138, 255, 0.3); /* Glowing shadow */
+  border-radius: 15px; /* Rounded corners */
+}
+
+.modal-header {
+  border-bottom: 1px solid rgba(123, 181, 255, 0.3); /* Subtle bottom border for header */
+}
+
+.modal-header .modal-title {
+  color: #7bb5ff; /* Accent color for modal title */
+}
+
+.modal-body {
+  padding: 1.5rem; /* Padding for modal body */
+}
+
+.modal-footer {
+  border-top: 1px solid rgba(123, 181, 255, 0.3); /* Subtle top border for footer */
+}
+
+/* --- HELP MODAL STYLES --- */
+#helpModal .modal-content {
+  background: linear-gradient(
+    -45deg,
+    #23a6d5,
+    #23d5ab,
+    #1a428a,
+    #274b74
+  ); /* Gradient background for help modal */
+  background-size: 400% 400%; /* Large background size for animation */
+  animation: gradientAnimation 10s ease infinite; /* Apply gradient animation */
+  color: #ffffff; /* White text for help modal */
+  border-color: #23d5ab; /* Greenish-blue border color */
+}
+
+#helpModal .modal-header .modal-title,
+#helpModal h4,
+#helpModal h6 {
+  color: #ffffff; /* White color for headings in help modal */
+  text-shadow: 0 0 3px rgba(0, 0, 0, 0.5); /* Text shadow for better contrast */
+}
+
+.help-nav-pills .nav-link {
+  background-color: rgba(
+    0,
+    0,
+    0,
+    0.2
+  ); /* Semi-transparent black background for nav links */
+  color: #e0fbfc !important; /* Light blue text color */
+  border: 1px solid rgba(255, 255, 255, 0.2); /* Subtle white border */
+}
+
+.help-nav-pills .nav-link.active {
+  background-color: rgba(
+    255,
+    255,
+    255,
+    0.2
+  ); /* Semi-transparent white background for active nav link */
+  color: #ffffff !important; /* White text for active nav link */
+  border-color: #ffffff; /* White border for active nav link */
+}
+
+.tab-content {
+  background-color: rgba(
+    0,
+    0,
+    0,
+    0.2
+  ); /* Semi-transparent black background for tab content */
+  padding: 1.5rem; /* Padding for tab content */
+  border-radius: 8px; /* Rounded corners */
+  margin-top: -1px; /* Adjust margin to align with nav pills */
+}
+
+#helpModal .accordion {
+  /* Custom CSS variables for Bootstrap accordion to match theme */
+  --bs-accordion-bg: rgba(
+    0,
+    0,
+    0,
+    0.2
+  ); /* Background color for accordion items */
+  --bs-accordion-color: #ffffff; /* Text color for accordion items */
+  --bs-accordion-border-color: rgba(
+    255,
+    255,
+    255,
+    0.3
+  ); /* Border color for accordion items */
+  --bs-accordion-btn-color: #ffffff; /* Button text color */
+  --bs-accordion-active-color: #ffffff; /* Active button text color */
+  --bs-accordion-active-bg: rgba(
+    0,
+    0,
+    0,
+    0.3
+  ); /* Active button background color */
+  /* SVG icons for accordion buttons, encoded to be white */
+  --bs-accordion-btn-icon: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23ffffff'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+  --bs-accordion-btn-active-icon: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23ffffff'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+}
+
+.accordion-button {
+  background-color: rgba(
+    0,
+    0,
+    0,
+    0.2
+  ); /* Semi-transparent black background for accordion buttons */
+}
+
+.accordion-button:not(.collapsed) {
+  box-shadow: none; /* Remove box shadow when expanded */
+}
+
+.accordion-body {
+  background-color: rgba(
+    0,
+    0,
+    0,
+    0.1
+  ); /* Slightly lighter semi-transparent black background for accordion body */
+}
+
+.help-footer-info {
+  border-top: 1px solid rgba(255, 255, 255, 0.3); /* Subtle top border for footer info */
+  color: rgba(255, 255, 255, 0.7); /* Semi-transparent white text color */
+  font-size: 0.8rem; /* Smaller font size */
+  margin-top: 1.5rem; /* Top margin */
+  padding-top: 1rem; /* Top padding */
+}
+
+.help-footer-info p {
+  margin: 0; /* Remove default paragraph margin */
+}
+
+/* --- NEW DASHBOARD MODAL STYLES --- */
+#dashboardModal .modal-content {
+  background: linear-gradient(
+    -45deg,
+    #23a6d5,
+    #23d5ab,
+    #1a428a,
+    #274b74
+  ); /* Gradient background for dashboard modal */
+  background-size: 400% 400%; /* Large background size for animation */
+  animation: gradientAnimation 10s ease infinite; /* Apply gradient animation */
+  color: #ffffff; /* White text for dashboard modal */
+  border-color: #23d5ab; /* Greenish-blue border color */
+}
+
+#dashboardModal .modal-header .modal-title {
+  color: #ffffff; /* White color for dashboard modal title */
+}
+
+.leaderboard-table {
+  color: #ffffff; /* White text for leaderboard table */
+  /* Custom CSS variables for Bootstrap table to match theme */
+  --bs-table-bg: rgba(0, 0, 0, 0.2); /* Background color for table rows */
+  --bs-table-border-color: rgba(
+    255,
+    255,
+    255,
+    0.3
+  ); /* Border color for table cells */
+  --bs-table-hover-bg: rgba(255, 255, 255, 0.1); /* Background color on hover */
+  --bs-table-hover-color: #ffffff; /* Text color on hover */
+}
+
+.leaderboard-table thead th {
+  color: #e0fbfc; /* Light blue color for table headers */
+}
+
+.leaderboard-table tbody tr {
+  cursor: pointer; /* Pointer cursor for table rows to indicate clickability */
+}
+
+#playerDetailModal h6 {
+  border-bottom: 1px solid rgba(123, 181, 255, 0.3); /* Subtle bottom border */
+  padding-bottom: 8px; /* Padding below the border */
+  margin-bottom: 12px; /* Margin below the heading */
+}
+
+#playerDetailModal ul {
+  padding-left: 1.2rem; /* Indent for unordered lists */
+}
+
+#playerDetailModal li {
+  margin-bottom: 5px; /* Space between list items */
+}
+
+/* --- STORY & INTERACTION STYLES --- */
+.story-text {
+  height: 420px; /* Fixed height for story text area */
+  overflow-y: auto; /* Enable vertical scrolling if content overflows */
+  font-size: 1.1rem; /* Slightly larger font size for readability */
+  white-space: pre-line; /* Preserves line breaks and spaces */
+  padding: 15px; /* Inner padding */
+  border-radius: 8px; /* Rounded corners */
+  background-color: rgba(
+    25,
+    25,
+    45,
+    0.7
+  ); /* Semi-transparent dark background */
+  transition: all 0.3s ease; /* Smooth transition for any changes */
+  margin-bottom: 1rem; /* Space below the story text area */
+}
+
+.story-text p {
+  margin-bottom: 15px; /* Space between paragraphs */
+  padding-bottom: 10px; /* Padding below each paragraph */
+  border-bottom: 1px solid rgba(123, 181, 255, 0.3); /* Subtle border below each paragraph */
+  animation: fadeIn 0.5s ease-in-out; /* Fade-in animation for new paragraphs */
+}
+
+.story-text p:last-child {
+  border-bottom: none; /* No border for the last paragraph */
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0; /* Start from fully transparent */
+    transform: translateY(10px); /* Start slightly below final position */
+  }
+
+  to {
+    opacity: 1; /* End at fully opaque */
+    transform: translateY(0); /* End at original position */
+  }
+}
+
+.choice-btn {
+  background: #3a4a6b; /* Dark blue background for choice buttons */
+  border: 1px solid #5c7a9e; /* Lighter blue border */
+  margin: 5px; /* Margin around buttons */
+  transition: all 0.2s ease-out; /* Smooth transition for hover effects */
+  text-transform: uppercase; /* Uppercase text */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+}
+
+.choice-btn:hover {
+  transform: scale(1.05) translateY(-3px); /* Slightly enlarge and lift on hover */
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3); /* Deeper shadow on hover */
+  filter: brightness(1.1); /* Slightly brighten on hover */
+}
+
+.choice-btn-green {
+  background-color: #2a5c41; /* Green background for specific choice buttons */
+  border-color: #4caf50; /* Green border */
+}
+
+.choice-btn-purple {
+  background-color: #4c3b71; /* Purple background for specific choice buttons */
+  border-color: #8a2be2; /* Purple border */
+}
+
+.choice-btn-orange {
+  background-color: #8c4d20; /* Orange background for specific choice buttons */
+  border-color: #ff8c00; /* Orange border */
+}
+
+.input-field {
+  background-color: rgba(
+    40,
+    40,
+    60,
+    0.7
+  ); /* Semi-transparent dark background for input fields */
+  border: 1px solid #4e5a8a; /* Blueish-grey border */
+  color: #ffffff; /* White text color */
+}
+
+.input-field:focus {
+  background-color: rgba(
+    50,
+    50,
+    75,
+    0.8
+  ); /* Slightly lighter background on focus */
+  border-color: #7bb5ff; /* Accent border color on focus */
+  color: #ffffff; /* White text color on focus */
+  box-shadow: 0 0 0 0.25rem rgba(123, 181, 255, 0.25); /* Glow effect on focus */
+}
+
+.hidden {
+  display: none; /* Utility class to hide elements */
+}
+
+/* --- GAME SIDE PANELS --- */
+.game-panel {
+  background: linear-gradient(
+    145deg,
+    rgba(28, 28, 48, 0.8),
+    rgba(40, 40, 65, 0.8)
+  ); /* Gradient background for game panels */
+  border-radius: 10px; /* Rounded corners */
+  padding: 20px; /* Inner padding */
+  border: 1px solid rgba(123, 181, 255, 0.2); /* Subtle border */
+  height: 100%; /* Full height of its parent */
+  display: flex; /* Use flexbox for internal layout */
+  flex-direction: column; /* Stack items vertically */
+  box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.4); /* Inset shadow for depth */
+}
+
+.panel-header {
+  color: #a2d2ff; /* Light blue accent color for headers */
+  border-bottom: 2px solid rgba(123, 181, 255, 0.3); /* Subtle bottom border */
+  padding-bottom: 10px; /* Padding below border */
+  margin-bottom: 15px; /* Margin below header */
+  font-size: 1.2rem; /* Slightly larger font size */
+  text-shadow: 0 0 5px rgba(123, 181, 255, 0.5); /* Text shadow for glow effect */
+}
+
+.panel-header i {
+  margin-right: 10px; /* Space between icon and text */
+}
+
+#player-status-content p {
+  display: flex; /* Use flexbox for layout of status items */
+  justify-content: space-between; /* Space out items (label and value) */
+  font-size: 1.1rem; /* Slightly larger font size */
+  background-color: rgba(0, 0, 0, 0.2); /* Semi-transparent black background */
+  padding: 8px 12px; /* Padding for each status item */
+  border-radius: 6px; /* Rounded corners */
+  margin-bottom: 8px; /* Space between status items */
+}
+
+#player-status-content strong {
+  color: #a2d2ff; /* Light blue accent color for strong text */
+}
+
+#player-status-content span {
+  font-weight: bold; /* Bold font for values */
+}
+
+#inventory-list {
+  flex-shrink: 0; /* Prevent list from shrinking */
+}
+
+#inventory-list li {
+  background-color: rgba(
+    0,
+    0,
+    0,
+    0.3
+  ); /* Semi-transparent black background for list items */
+  padding: 10px 15px; /* Padding for list items */
+  border-radius: 5px; /* Rounded corners */
+  margin-bottom: 8px; /* Space between list items */
+  font-style: normal; /* Ensure normal font style */
+  font-weight: bold; /* Bold font */
+  color: #c5e1f8; /* Light blue text color */
+  border-left: 4px solid #7bb5ff; /* Left border accent */
+  cursor: help; /* Help cursor to indicate hover info */
+  position: relative; /* Needed for tooltip positioning */
+  transition: all 0.2s ease-in-out; /* Smooth transition for hover effects */
+}
+
+#inventory-list li:hover {
+  background-color: rgba(
+    123,
+    181,
+    255,
+    0.2
+  ); /* Subtle blue background on hover */
+  border-left-color: #ffd700; /* Gold border on hover */
+  transform: translateX(5px); /* Slide slightly to the right on hover */
+}
+
+#inventory-list li::before {
+  content: attr(data-info); /* Display content from data-info attribute */
+  position: absolute; /* Absolute positioning for tooltip */
+  bottom: 100%; /* Position above the list item */
+  left: 50%; /* Center horizontally */
+  transform: translateX(-50%) translateY(-10px); /* Adjust for centering and spacing */
+  background-color: #1a1105; /* Dark brown background for tooltip */
+  color: #ffd166; /* Gold text color for tooltip */
+  padding: 8px 12px; /* Padding for tooltip */
+  border-radius: 6px; /* Rounded corners */
+  font-size: 0.85rem; /* Smaller font size */
+  white-space: nowrap; /* Prevent text wrapping */
+  opacity: 0; /* Start invisible */
+  visibility: hidden; /* Hide element completely */
+  transition: opacity 0.2s, transform 0.2s; /* Smooth transition for tooltip appearance */
+  pointer-events: none; /* Allow clicks through the tooltip */
+  z-index: 10; /* Ensure tooltip is above other content */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Shadow for tooltip */
+}
+
+#inventory-list li:hover::before {
+  opacity: 1; /* Fully visible on hover */
+  visibility: visible; /* Make visible on hover */
+  transform: translateX(-50%) translateY(0); /* Move to final position on hover */
+}
+
+.inventory-placeholder {
+  opacity: 0.6; /* Reduced opacity for placeholder text */
+}
+
+#achievements-list {
+  overflow-y: auto; /* Enable vertical scrolling if content overflows */
+  padding-right: 5px; /* Padding for scrollbar */
+  flex-grow: 1; /* Allow list to grow and fill available space */
+  min-height: 0; /* Allow shrinking */
+  max-height: 400px; /* Max height for the achievements list */
+}
+
+#achievements-list li {
+  display: flex; /* Use flexbox for layout of achievement items */
+  align-items: center; /* Vertically align items */
+  margin-bottom: 15px; /* Space between achievement items */
+  padding: 10px; /* Padding for achievement items */
+  border-radius: 5px; /* Rounded corners */
+}
+
+.achievement-unlocked {
+  background-color: rgba(
+    255,
+    215,
+    0,
+    0.1
+  ); /* Subtle gold background for unlocked achievements */
+  border-left: 4px solid #ffd700; /* Gold left border */
+}
+
+.achievement-locked {
+  background-color: rgba(
+    100,
+    100,
+    100,
+    0.1
+  ); /* Subtle grey background for locked achievements */
+  border-left: 4px solid #6c757d; /* Grey left border */
+  opacity: 0.6; /* Reduced opacity for locked achievements */
+}
+
+.achievement-icon {
+  font-size: 1.8rem; /* Larger icon size */
+  margin-right: 15px; /* Space between icon and text */
+  width: 40px; /* Fixed width for icon container */
+  text-align: center; /* Center align icon */
+}
+
+.achievement-unlocked .achievement-icon {
+  color: #ffd700; /* Gold color for unlocked achievement icon */
+}
+
+.achievement-locked .achievement-icon {
+  color: #6c757d; /* Grey color for locked achievement icon */
+}
+
+.achievement-details h6 {
+  margin: 0; /* Remove default margin */
+  font-weight: bold; /* Bold font for achievement title */
+  color: #e6f0ff; /* Light blue text color */
+}
+
+.achievement-details p {
+  margin: 0; /* Remove default margin */
+  font-size: 0.85rem; /* Smaller font size for description */
+  color: #adb5bd; /* Grey text color */
+}
+
+/* --- UTILITY & ANIMATION --- */
+.progress {
+  height: 6px; /* Slimmer progress bar */
+  margin-bottom: 15px; /* Space below progress bar */
+  background-color: #2a2a40; /* Dark background for the progress track */
+}
+
+.progress-bar {
+  background-color: #7bb5ff; /* Accent color for the progress bar fill */
+}
+
+.btn-glow {
+  animation: glow 1.5s infinite alternate; /* Apply glow animation */
+}
+
+@keyframes glow {
+  from {
+    box-shadow: 0 0 5px -5px #7bb5ff; /* Start with subtle inner shadow */
+  }
+
+  to {
+    box-shadow: 0 0 15px 5px #7bb5ff; /* End with more prominent outer shadow */
+  }
+}
+
+.welcome-gif,
+.stop-gif {
+  max-width: 300px; /* Max width for gifs */
+  margin: 20px auto; /* Center gifs horizontally with vertical margin */
+  display: block; /* Ensure block display for margin auto to work */
+  border-radius: 10px; /* Rounded corners */
+  border: 2px solid rgba(123, 181, 255, 0.2); /* Subtle border */
+}
+
+/* Custom scrollbar styling for Webkit browsers */
+::-webkit-scrollbar {
+  width: 8px; /* Width of the scrollbar */
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(
+    20,
+    20,
+    35,
+    0.5
+  ); /* Semi-transparent dark background for scrollbar track */
+  border-radius: 10px; /* Rounded track */
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(
+    123,
+    181,
+    255,
+    0.5
+  ); /* Semi-transparent blue for scrollbar thumb */
+  border-radius: 10px; /* Rounded thumb */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(123, 181, 255, 0.8); /* More opaque blue on hover */
+}
+
+/* --- PUZZLE STYLES --- */
+#puzzle-feedback {
+  text-align: center; /* Center align feedback text */
+  font-weight: bold; /* Bold font for feedback */
+  min-height: 24px; /* Minimum height to prevent layout shifts */
+  transition: color 0.3s ease; /* Smooth transition for color changes */
+}
+
+#puzzle-hint-btn {
+  background-color: #6c757d; /* Grey background for hint button */
+  border-color: #6c757d; /* Grey border for hint button */
+}
+
+#puzzle-hint-btn:disabled {
+  opacity: 0.5; /* Reduced opacity when disabled */
+}
+
+/* --- Rune Matching Puzzle --- */
+.rune-grid {
+  display: grid; /* Use grid for layout */
+  grid-template-columns: repeat(3, 1fr); /* 3 equal columns */
+  gap: 15px; /* Space between grid items */
+  max-width: 240px; /* Max width for the grid */
+  margin: 20px auto; /* Center grid horizontally with vertical margin */
+  justify-content: center; /* Center items within the grid */
+}
+
+.rune-cell {
+  width: 60px; /* Fixed width for rune cells */
+  height: 60px; /* Fixed height for rune cells */
+  border: 2px solid #a67c52; /* Brown border */
+  background-color: rgba(
+    255,
+    255,
+    255,
+    0.05
+  ); /* Very subtle white background */
+  font-size: 2rem; /* Large font size for runes */
+  display: flex; /* Use flexbox for centering content */
+  align-items: center; /* Vertically center content */
+  justify-content: center; /* Horizontally center content */
+  cursor: pointer; /* Pointer cursor to indicate clickability */
+  transition: all 0.2s ease; /* Smooth transition for hover effects */
+  color: #ffd166; /* Gold text color */
+  user-select: none; /* Prevent text selection */
+}
+
+.rune-cell:hover {
+  background-color: rgba(
+    255,
+    255,
+    255,
+    0.1
+  ); /* Slightly more visible white background on hover */
+}
+
+.rune-cell.selected {
+  background-color: #a67c52; /* Brown background when selected */
+  color: #1a1105; /* Dark text color when selected */
+  transform: scale(1.1); /* Slightly enlarge when selected */
+}
+
+/* --- Potion Mixing Puzzle --- */
+.potion-ingredients {
+  display: flex; /* Use flexbox for layout */
+  justify-content: center; /* Center items horizontally */
+  gap: 15px; /* Space between ingredients */
+  margin: 20px 0; /* Vertical margin */
+  flex-wrap: wrap; /* Allow ingredients to wrap to next line */
+}
+
+.ingredient {
+  padding: 10px 15px; /* Padding for ingredients */
+  border: 2px solid #a67c52; /* Brown border */
+  background-color: rgba(
+    255,
+    255,
+    255,
+    0.05
+  ); /* Very subtle white background */
+  color: #ffd166; /* Gold text color */
+  border-radius: 8px; /* Rounded corners */
+  cursor: pointer; /* Pointer cursor to indicate clickability */
+  transition: all 0.2s ease; /* Smooth transition for hover effects */
+  user-select: none; /* Prevent text selection */
+}
+
+.ingredient:hover {
+  background-color: rgba(
+    255,
+    255,
+    255,
+    0.1
+  ); /* Slightly more visible white background on hover */
+}
+
+.ingredient.selected {
+  background-color: #754c24; /* Darker brown background when selected */
+  transform: translateY(-5px); /* Lift slightly when selected */
+}
+
+/* --- Riddle Puzzle --- */
+.riddle-input-group {
+  display: flex; /* Use flexbox for layout */
+  justify-content: center; /* Center items horizontally */
+  margin-top: 20px; /* Top margin */
+}
+
+.riddle-input-group .input-field {
+  max-width: 250px; /* Max width for the input field */
+  text-align: center; /* Center align text inside input */
+}
+
+/* --- Constellation Puzzle --- */
+.constellation-map {
+  position: relative; /* Relative positioning for absolute children */
+  height: 250px; /* Fixed height for the map */
+  width: 100%; /* Full width */
+  background: rgba(0, 0, 0, 0.2); /* Semi-transparent black background */
+  border-radius: 10px; /* Rounded corners */
+  margin-top: 20px; /* Top margin */
+}
+
+.star {
+  position: absolute; /* Absolute positioning for stars */
+  width: 15px; /* Fixed width for stars */
+  height: 15px; /* Fixed height for stars */
+  background: white; /* White background for stars */
+  border-radius: 50%; /* Make stars circular */
+  cursor: pointer; /* Pointer cursor to indicate clickability */
+  box-shadow: 0 0 10px white, 0 0 20px white; /* Glowing effect for stars */
+  transition: all 0.2s ease; /* Smooth transition for hover effects */
+}
+
+.star:hover {
+  transform: scale(1.5); /* Enlarge on hover */
+}
+
+.star.selected {
+  background-color: #a2d2ff; /* Blue background when selected */
+  box-shadow: 0 0 15px #a2d2ff, 0 0 30px #a2d2ff; /* Stronger blue glow when selected */
+}
+
+.star-label {
+  position: absolute; /* Absolute positioning for labels */
+  top: -20px; /* Position above the star */
+  left: 50%; /* Center horizontally */
+  transform: translateX(-50%); /* Adjust for centering */
+  color: #fff; /* White text color */
+  font-size: 0.9em; /* Slightly smaller font size */
+  pointer-events: none; /* Allow clicks to pass through the label */
+}
+
+/* --- Whispering Stones Puzzle --- */
+.stone-circle {
+  display: flex; /* Use flexbox for layout */
+  justify-content: center; /* Center items horizontally */
+  gap: 20px; /* Space between stones */
+  margin: 20px 0; /* Vertical margin */
+}
+
+.whispering-stone {
+  width: 70px; /* Fixed width for stones */
+  height: 70px; /* Fixed height for stones */
+  border-radius: 50%; /* Make stones circular */
+  background-color: #5574a9; /* Blue-grey background */
+  border: 3px solid #7598d1; /* Lighter blue-grey border */
+  cursor: pointer; /* Pointer cursor to indicate clickability */
+  transition: all 0.1s ease-in-out; /* Smooth transition for active state */
+  display: flex; /* Use flexbox for centering content */
+  align-items: center; /* Vertically center content */
+  justify-content: center; /* Horizontally center content */
+  font-size: 1.5rem; /* Larger font size for stone content */
+  color: #e6f0ff; /* Light blue text color */
+  user-select: none; /* Prevent text selection */
+}
+
+.whispering-stone.active {
+  background-color: #a2d2ff; /* Light blue background when active */
+  box-shadow: 0 0 20px #a2d2ff; /* Blue glow when active */
+  transform: scale(1.1); /* Slightly enlarge when active */
+}
+
+/* --- Forest Memory Puzzle --- */
+.memory-grid {
+  display: grid; /* Use grid for layout */
+  grid-template-columns: repeat(4, 1fr); /* 4 equal columns */
+  gap: 10px; /* Space between cards */
+  justify-content: center; /* Center items within the grid */
+  max-width: 300px; /* Max width for the grid */
+  margin: 20px auto; /* Center grid horizontally with vertical margin */
+  perspective: 1000px; /* Perspective for 3D flip effect */
+}
+
+.memory-card {
+  width: 60px; /* Fixed width for memory cards */
+  height: 60px; /* Fixed height for memory cards */
+  position: relative; /* Relative positioning for card faces */
+  transform-style: preserve-3d; /* Preserve 3D transformations for children */
+  transition: transform 0.6s; /* Smooth transition for flip effect */
+  cursor: pointer; /* Pointer cursor to indicate clickability */
+}
+
+.memory-card.is-flipped {
+  transform: rotateY(180deg); /* Flip the card on its Y-axis when flipped */
+}
+
+.card-face {
+  position: absolute; /* Absolute positioning for card faces */
+  width: 100%; /* Full width of the card */
+  height: 100%; /* Full height of the card */
+  backface-visibility: hidden; /* Hide back face when rotated away */
+  border-radius: 8px; /* Rounded corners */
+  display: flex; /* Use flexbox for centering content */
+  align-items: center; /* Vertically center content */
+  justify-content: center; /* Horizontally center content */
+  font-size: 2rem; /* Large font size for card content */
+}
+
+.card-face-front {
+  background: #5574a9; /* Blue-grey background for the front face */
+  border: 2px solid #7598d1; /* Lighter blue-grey border */
+  color: #e6f0ff; /* Light blue text color */
+}
+
+.card-face-back {
+  background: #a2d2ff; /* Light blue background for the back face */
+  border: 2px solid #e6f0ff; /* Lighter blue border */
+  color: #1c3862; /* Dark blue text color */
+  transform: rotateY(
+    180deg
+  ); /* Rotate the back face to be visible when flipped */
+}
+
+/* --- Hacking Puzzle --- */
+.hacking-grid {
+  display: flex; /* Use flexbox for layout */
+  flex-wrap: wrap; /* Allow items to wrap to next line */
+  justify-content: center; /* Center items horizontally */
+  gap: 10px; /* Space between pads */
+  max-width: 270px; /* Max width for the grid */
+  margin: 20px auto; /* Center grid horizontally with vertical margin */
+}
+
+.hack-pad {
+  width: 80px; /* Fixed width for hack pads */
+  height: 80px; /* Fixed height for hack pads */
+  border-radius: 10px; /* Rounded corners */
+  cursor: pointer; /* Pointer cursor to indicate clickability */
+  transition: all 0.1s ease; /* Smooth transition for hover/active effects */
+  border: 2px solid; /* Border for visual separation */
+  display: flex; /* Use flexbox for centering content */
+  align-items: center; /* Vertically center content */
+  justify-content: center; /* Horizontally center content */
+  font-weight: bold; /* Bold font for pad content */
+  user-select: none; /* Prevent text selection */
+}
+
+.hack-pad:hover {
+  filter: brightness(1.2); /* Brighten on hover */
+}
+
+.hack-pad.active {
+  transform: scale(0.95); /* Slightly shrink when active */
+  filter: brightness(2); /* Significantly brighten when active */
+  box-shadow: 0 0 15px #fff; /* White glow when active */
+}
+
+.pad-green {
+  background-color: #2c903f; /* Green background */
+  border-color: #4dff6d; /* Lighter green border */
+}
+
+.pad-red {
+  background-color: #902c2c; /* Red background */
+  border-color: #ff4d4d; /* Lighter red border */
+}
+
+.pad-yellow {
+  background-color: #908b2c; /* Yellow background */
+  border-color: #fffb4d; /* Lighter yellow border */
+}
+
+.pad-blue {
+  background-color: #2c5a90; /* Blue background */
+  border-color: #4d94ff; /* Lighter blue border */
+}
+
+/* --- Route Planner Puzzle --- */
+.route-grid {
+  display: grid; /* Use grid for layout */
+  grid-template-columns: repeat(3, 1fr); /* 3 equal columns */
+  gap: 10px; /* Space between pads */
+  max-width: 240px; /* Max width for the grid */
+  margin: 20px auto; /* Center grid horizontally with vertical margin */
+  justify-content: center; /* Center items within the grid */
+}
+
+.route-pad {
+  width: 70px; /* Fixed width for route pads */
+  height: 70px; /* Fixed height for route pads */
+  background: #0073b7; /* Dark blue background */
+  border: 2px solid #00a0f7; /* Lighter blue border */
+  border-radius: 8px; /* Rounded corners */
+  color: #c5e1f8; /* Light blue text color */
+  font-size: 1rem; /* Font size for pad content */
+  font-weight: bold; /* Bold font */
+  display: flex; /* Use flexbox for centering content */
+  align-items: center; /* Vertically center content */
+  justify-content: center; /* Horizontally center content */
+  cursor: pointer; /* Pointer cursor to indicate clickability */
+  transition: all 0.2s ease; /* Smooth transition for hover/selected effects */
+  user-select: none; /* Prevent text selection */
+}
+
+.route-pad:hover {
+  background-color: #00a0f7; /* Lighter blue background on hover */
+}
+
+.route-pad.selected {
+  background-color: #00ffff; /* Cyan background when selected */
+  color: #0f1923; /* Dark text color when selected */
+  transform: scale(1.05); /* Slightly enlarge when selected */
+}
+
+/* --- Power Conduit Puzzle --- */
+.conduit-grid {
+  display: grid; /* Use grid for layout */
+  grid-template-columns: repeat(4, 1fr); /* 4 equal columns */
+  gap: 5px; /* Smaller gap between pipes */
+  max-width: 260px; /* Max width for the grid */
+  padding: 10px; /* Inner padding */
+  background: #1d2b38; /* Dark background for the grid */
+  border: 2px solid #00ffff; /* Cyan border for the grid */
+  margin: 15px auto; /* Center grid horizontally with vertical margin */
+  justify-content: center; /* Center items within the grid */
+}
+
+.pipe {
+  width: 60px; /* Fixed width for pipes */
+  height: 60px; /* Fixed height for pipes */
+  background-size: cover; /* Cover the pipe cell */
+  cursor: pointer; /* Pointer cursor to indicate clickability */
+  transition: transform 0.3s ease; /* Smooth transition for rotation */
+}
+
+.source-pipe,
+.emitter-pipe {
+  width: 60px; /* Fixed width for source/emitter */
+  height: 60px; /* Fixed height for source/emitter */
+  display: flex; /* Use flexbox for centering content */
+  align-items: center; /* Vertically center content */
+  justify-content: center; /* Horizontally center content */
+  font-size: 2.5rem; /* Large font size for icons */
+  background-color: #1d2b38; /* Dark background */
+  border: 2px solid #00a0f7; /* Blue border */
+  border-radius: 8px; /* Rounded corners */
+}
+
+.source-pipe {
+  color: #ffd700; /* Gold color for source icon */
+}
+
+.emitter-pipe {
+  color: #6c757d; /* Grey color for emitter icon */
+  transition: all 0.5s ease; /* Smooth transition for color change when active */
+}
+
+#confetti-canvas {
+  position: fixed; /* Fixed position to cover the entire viewport */
+  top: 0; /* Align to the top */
+  left: 0; /* Align to the left */
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  z-index: 1055; /* High z-index to appear on top of other content, but below modals */
+  pointer-events: none; /* Allow clicks to pass through the canvas */
+}
